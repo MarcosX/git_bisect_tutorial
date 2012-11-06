@@ -1,9 +1,16 @@
 class Evaluator
+
+  def initialize
+    @victory = [['rock', 'scissors'], ['scissor', 'paper'], ['rock', 'paper']]
+  end
+
   def evaluate player1, player2
-    if player1 == 'rock' && player2 == 'scissors' || player1 == 'scissors' && player2 == 'paper' || player1 == 'paper' && player2 == 'rock'
+    if @victory.include? [player1, player2]
       return 1
-    elsif player2 == 'rock' && player1 == 'scissors' || player2 == 'scissors' && player1 == 'paper' || player2 == 'paper' && player1 == 'rock'
+    elsif @victory.include? [player2, player1]
       return 2
+    else
+      return 0
     end
   end
 end
