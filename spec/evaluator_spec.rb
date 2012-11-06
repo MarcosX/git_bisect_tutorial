@@ -32,4 +32,18 @@ describe Evaluator do
       @evaluator.evaluate( 'rock','paper').should == 2
     end
   end
+
+  context "tie" do
+    it "rock beats scissors" do
+      @evaluator.evaluate( 'scissors','scissors').should == 0
+    end
+
+    it 'paper beats rock' do
+      @evaluator.evaluate( 'rock','rock').should == 0
+    end
+
+    it 'scissors beats papaer' do
+      @evaluator.evaluate( 'paper','paper').should == 0
+    end
+  end
 end
