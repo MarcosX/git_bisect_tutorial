@@ -5,12 +5,8 @@ class Evaluator
   end
 
   def evaluate player1, player2
-    if @victory.include? [player1, player2]
-      return 1
-    elsif @victory.include? [player2, player1]
-      return 2
-    else
-      return 0
-    end
+    return 1 if @victory.include? [player1, player2]
+    return 2 if @victory.include? [player2, player1]
+    0
   end
 end
